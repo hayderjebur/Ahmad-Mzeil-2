@@ -14,7 +14,7 @@ const Product = ({ product }) => {
   return (
     <Card
       className='m-2 p-2 rounded'
-      style={{ minHeight: '29rem', position: 'relative' }}
+      style={{ minHeight: '36rem', position: 'relative' }}
     >
       <Link to={`/product/${product._id}`}>
         {new Date(product.createdAt).getDate() <= 20 && (
@@ -28,7 +28,7 @@ const Product = ({ product }) => {
         )}
         <Card.Img src={product.image} variant='top' />
       </Link>
-      <div
+      {/* <div
         className='addItem'
         // onClick={(e) => {
         //   dispatch(addToCart(product._id, 1));
@@ -36,7 +36,7 @@ const Product = ({ product }) => {
       >
         <i className='fas fa-shopping-cart' style={{ color: 'white' }}></i>
         Add to cart
-      </div>
+      </div> */}
 
       <Card.Body>
         <Link to={`/product/${product._id}`}>
