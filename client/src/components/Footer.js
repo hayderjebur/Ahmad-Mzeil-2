@@ -17,7 +17,7 @@ const Footer = () => {
             >
               e
             </span>
-            Shop
+            Shop 2.0
           </Col>
         </Row>
       </Container>
