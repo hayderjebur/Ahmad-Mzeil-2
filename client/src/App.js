@@ -24,11 +24,6 @@ const App = () => {
     <Router>
       <Header />
       <main>
-        {/* <Container
-          style={{
-            margin: '0',
-          }}
-        > */}
         <Route path='/login' component={LoginScreen} />
         <Route path='/order/:id' component={OrderScreen} />
         <Route path='/shipping' component={ShippingScreen} />
@@ -56,7 +51,6 @@ const App = () => {
           exact
         />
         <Route path='/' component={LandingPage} exact />
-        {/* </Container> */}
       </main>
       <Footer />
     </Router>
