@@ -1,0 +1,60 @@
+.hero {
+  width: 100%;
+  height: 85vh;
+  position: relative;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.flexJustify {
+  display: flex;
+  justify-content: space-between;
+}
+.textGreenColor {
+  text-transform: none;
+  color: #4bbf73;
+  font-family: Dancing Script;
+}
+.dancingFont {
+  text-transform: none;
+  font-family: Dancing Script;
+}
+.icon {
+  margin: 1rem;
+  color: #4bbf73;
+  cursor: pointer;
+}
+.p-0 {
+  padding: 0;
+}
+.p2 {
+  padding: 2rem;
+}
+.fontStyle {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1.3rem;
+}
+.greenBtn {
+  background-color: #4bbf73;
+  border-radius: 50px;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 2rem;
+}
+.btnn:hover {
+  background-color: #58f57f;
+}
+.fab:hover {
+  color: #6eee9b;
+}
+.btnn:active {
+  border: none;
+}
+div a {
+  color: #4bbf73;
+}
