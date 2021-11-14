@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Router } from 'react-router-dom';
-import SearchBox from '../components/SearchBox';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { Row, Col, Image, Container } from 'react-bootstrap';
-import Product from '../components/Product';
+import { Row, Col, Image } from 'react-bootstrap';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import Paginate from '../components/Paginate';
 import Meta from '../components/Meta';
 import { listProducts } from '../actions/productActions';
-import ProductCarousel from '../components/ProductCarousel';
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword;
@@ -32,13 +29,6 @@ const HomeScreen = ({ match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
-          {/* <Row>
-            {products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={4}>
-                <Product product={product} />
-              </Col>
-            ))}
-          </Row> */}
           <Link to='/' className='btn btn-light'>
             Go Back
           </Link>
@@ -48,7 +38,6 @@ const HomeScreen = ({ match }) => {
                 <Image
                   style={{ margin: '0.5rem' }}
                   src={product.image}
-                  // src='./images/1.jpg'
                   thumbnail
                   className='h-100 w-100'
                 />

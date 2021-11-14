@@ -7,9 +7,7 @@ const LandingPage = () => {
   return (
     <Row>
       <Col sm={12} md={12} lg={6} xl={6}>
-        {/* <Col className='p-0'> */}
         <Image src='/images/ahmad.jpeg' className='hero' />
-        {/* </Col> */}
       </Col>
       <Col sm={12} md={12} lg={6} xl={6} className='flex p2'>
         <h1>
