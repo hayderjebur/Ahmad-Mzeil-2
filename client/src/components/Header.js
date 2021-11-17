@@ -40,7 +40,6 @@ const Header = () => {
                 style={{
                   fontSize: '1.3rem',
                   textTransform: 'none',
-
                   fontFamily: 'Dancing Script',
                 }}
               >
