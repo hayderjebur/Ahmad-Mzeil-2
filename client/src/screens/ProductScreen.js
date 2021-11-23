@@ -29,6 +29,8 @@ const ProductScreen = ({ history, match }) => {
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
+  const productList = useSelector((state) => state.productList);
+  const { page } = productList;
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -67,7 +69,7 @@ const ProductScreen = ({ history, match }) => {
 
   return (
     <>
-      <Link className='btn btn-light my-3' to='/'>
+      <Link className='btn btn-light my-3' to={`/page/${page - 1}`}>
         Go Back
       </Link>
       {loading ? (

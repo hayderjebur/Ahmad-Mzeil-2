@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 
 const Product = ({ product }) => {
-  console.log(product);
   return (
     <Card className='mb-2 p-2 rounded' style={{ height: '35rem' }}>
       <Link to={`/product/${product._id}`}>

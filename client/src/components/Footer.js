@@ -9,15 +9,15 @@ const Footer = () => {
           <Col className='text-center py-3'>
             Copyright &copy;{' '}
             <span
-              style={{
-                fontSize: '1rem',
-                textTransform: 'none',
-                color: '#4bbf73',
-              }}
+            // style={{
+            //   fontSize: '1rem',
+            //   textTransform: 'none',
+            //   color: '#4bbf73',
+            // }}
             >
-              Ahmad
+              Hayder
             </span>
-            Mzeil
+            Jebur
           </Col>
         </Row>
       </Container>

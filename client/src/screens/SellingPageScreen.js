@@ -31,7 +31,7 @@ const SellingPageScreen = ({ match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
-          <Link to='/' className='btn btn-light'>
+          <Link to={`/page/${page - 1}`} className='btn btn-light'>
             Go Back
           </Link>
 
