@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Image } from 'react-bootstrap';
+import { Row, Col, Image, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './landingPage.css';
 
@@ -40,16 +40,25 @@ const LandingPage = () => {
               <i class='fab fa-google-plus fa-3x '></i>
             </a>
           </div>
-          <div className='icon'>
-            <i class='fab fa-instagram fa-3x'></i>
+        </div>
+        <div className='flexRow'>
+          <div className='m2'>
+            <Link to={`/gallery`}>
+              {' '}
+              <Button type='submit' variant='outline-success'>
+                Gallery
+              </Button>
+            </Link>
+          </div>
+          <div className='m2'>
+            <Link to={`/page/1`}>
+              {' '}
+              <Button type='submit' variant='outline-success'>
+                Shop now
+              </Button>
+            </Link>
           </div>
         </div>
-        <Link to={`/page/1`}>
-          {' '}
-          <button size='lg' className='greenBtn'>
-            Gallery
-          </button>
-        </Link>
       </Col>
     </Row>
   );

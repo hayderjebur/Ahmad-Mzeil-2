@@ -1,6 +1,8 @@
 import path from 'path';
 import express from 'express';
 import multer from 'multer';
+import { uploadImg } from '../controllers/uploadImg.js';
+
 const router = express.Router();
 
 const storage = multer.diskStorage({
@@ -34,8 +36,10 @@ const upload = multer({
   },
 });
 
-router.post('/', upload.single('image'), (req, res) => {
-  res.send(`/${req.file.path}`);
-});
+// router.post('/', upload.single('image'), (req, res) => {
+//   console.log(req.body);
+//   res.send(`/hello`);
+// });
+router.route('/').post(upload.single('image'), uploadImg);
 
 export default router;

@@ -114,7 +114,7 @@ const ProductListScreen = ({ history, match }) => {
                     {' '}
                     <Image
                       width='70px'
-                      src={`../../${product.image}`}
+                      src={`${product.image}`}
                       alt={product.name}
                       fluid
                       rounded

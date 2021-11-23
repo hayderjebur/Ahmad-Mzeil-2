@@ -11,6 +11,9 @@
   justify-content: center;
   align-items: center;
 }
+.flexRow {
+  display: flex;
+}
 .flexJustify {
   display: flex;
   justify-content: space-between;
@@ -34,6 +37,9 @@
 }
 .p2 {
   padding: 2rem;
+}
+.m2 {
+  margin: 2rem;
 }
 .fontStyle {
   font-family: 'Titillium Web', sans-serif;

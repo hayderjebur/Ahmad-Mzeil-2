@@ -1,24 +1,26 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { Row, Col, Image } from 'react-bootstrap';
+import { Row, Col, Image, Form } from 'react-bootstrap';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import Paginate from '../components/Paginate';
 import Meta from '../components/Meta';
-import { listProducts } from '../actions/productActions';
-import Product from '../components/Product';
 
-const HomeScreen = ({ match }) => {
+import { uploadImage, listGallary } from '../actions/uploadImage';
+
+const GalleryScreen = ({ match }) => {
   const keyword = match.params.keyword;
   const pageNumber = match.params.pageNumber || 1;
 
   const dispatch = useDispatch();
-  const productList = useSelector((state) => state.productList);
-  const { loading, error, products, page, pages } = productList;
+  const galleryList = useSelector((state) => state.galleryList);
+  const { loading, error, gallery, page, pages } = galleryList;
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber));
+    dispatch(listGallary(keyword, pageNumber));
   }, [dispatch, keyword, pageNumber]);
 
   return (
@@ -33,24 +35,25 @@ const HomeScreen = ({ match }) => {
           <Link to='/' className='btn btn-light'>
             Go Back
           </Link>
-          {/* <Row>
-            {products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={4}>
-                <Product product={product} />
-              </Col>
-            ))}
-          </Row> */}
+
+          {userInfo && userInfo.isAdmin && (
+            <Form.Group controlId='formFile' className='mb-3'>
+              <Form.Control type='file' onChange={uploadImage} />
+            </Form.Group>
+          )}
+
           <Row style={{ margin: '2rem' }}>
-            {products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={4}>
+            {gallery.map((painting) => (
+              <Col key={painting._id} sm={12} md={6} lg={4} xl={4}>
                 <Image
                   style={{ margin: '0.5rem' }}
-                  src={product.image}
+                  src={painting.image.url}
                   thumbnail
                 />
               </Col>
             ))}
           </Row>
+
           <div style={{ marginLeft: '3rem' }}>
             <Paginate
               pages={pages}
@@ -64,4 +67,4 @@ const HomeScreen = ({ match }) => {
   );
 };
 
-export default HomeScreen;
+export default GalleryScreen;
