@@ -7,16 +7,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col className='text-center py-3'>
-            Copyright &copy;{' '}
-            <span
-            // style={{
-            //   fontSize: '1rem',
-            //   textTransform: 'none',
-            //   color: '#4bbf73',
-            // }}
-            >
-              Hayder
-            </span>
+            Copyright &copy; <span>Hayder</span>
             Jebur
           </Col>
         </Row>

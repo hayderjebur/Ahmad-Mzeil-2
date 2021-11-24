@@ -47,7 +47,7 @@ const GalleryScreen = ({ match }) => {
               <Col key={painting._id} sm={12} md={6} lg={4} xl={4}>
                 <Image
                   style={{ margin: '0.5rem' }}
-                  src={painting.image.url}
+                  src={painting?.image?.url}
                   thumbnail
                 />
               </Col>

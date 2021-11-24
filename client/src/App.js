@@ -20,6 +20,7 @@ import OrderListScreen from './screens/OrderListScreen';
 import LandingPage from './screens/landingPage/LandingPage';
 import GalleryScreen from './screens/GalleryScreen';
 import { Container } from 'react-bootstrap';
+import CreateProductScreen from './screens/CreateProduct';
 
 const App = () => {
   return (
@@ -39,6 +40,7 @@ const App = () => {
           <Route path='/admin/userlist' component={UserListScreen} />
           <Route path='/admin/user/:id/edit' component={UserEditScreen} />
           <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
+          <Route path='/admin/product/create' component={CreateProductScreen} />
           <Route
             path='/admin/productlist'
             component={ProductListScreen}
@@ -58,9 +60,9 @@ const App = () => {
             exact
           />
 
-          <Route path='/' component={LandingPage} exact />
           <Route path='/gallery' component={GalleryScreen} exact />
         </Container>
+        <Route path='/' component={LandingPage} exact />
       </main>
       <Footer />
     </Router>

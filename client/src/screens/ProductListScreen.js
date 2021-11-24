@@ -5,11 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import Paginate from '../components/Paginate';
-import {
-  listProducts,
-  deleteProduct,
-  createProduct,
-} from '../actions/productActions';
+import { listProducts, deleteProduct } from '../actions/productActions';
+
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants';
 
 const ProductListScreen = ({ history, match }) => {
@@ -65,10 +62,6 @@ const ProductListScreen = ({ history, match }) => {
     }
   };
 
-  const createProductHandler = () => {
-    dispatch(createProduct());
-  };
-
   return (
     <>
       <Row className='align-items-center'>
@@ -76,9 +69,11 @@ const ProductListScreen = ({ history, match }) => {
           <h1>Products</h1>
         </Col>
         <Col className='text-right'>
-          <Button className='my-3' onClick={createProductHandler}>
-            <i className='fas fa-plus'></i> Create Product
-          </Button>
+          <LinkContainer to={`/admin/product/create`}>
+            <Button className='my-3'>
+              <i className='fas fa-plus'></i> Create Product
+            </Button>
+          </LinkContainer>
         </Col>
       </Row>
       {loadingDelete && <Loader />}
@@ -97,8 +92,6 @@ const ProductListScreen = ({ history, match }) => {
                 <th>ID</th>
                 <th>NAME</th>
                 <th>PRICE</th>
-                <th>CATEGORY</th>
-                <th>BRAND</th>
                 <th>Image</th>
               </tr>
             </thead>
@@ -108,13 +101,11 @@ const ProductListScreen = ({ history, match }) => {
                   <td>{product._id}</td>
                   <td>{product.name}</td>
                   <td>${product.price}</td>
-                  <td>{product.category}</td>
-                  <td>{product.brand}</td>
                   <td>
                     {' '}
                     <Image
                       width='70px'
-                      src={`${product.image}`}
+                      src={`${product?.image?.url}`}
                       alt={product.name}
                       fluid
                       rounded

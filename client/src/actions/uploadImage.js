@@ -39,9 +39,7 @@ export const uploadImage = async (e) => {
 
   return await fetch('/api/upload', postOptions)
     .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-    })
+
     .catch(() => ({
       error: {
         message: 'Unable to save the image in database. Please try again',
